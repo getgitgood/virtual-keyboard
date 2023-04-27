@@ -1,3 +1,6 @@
+import './index.scss';
+import Key from './js-components/keys-class';
+
 // create base html layout //
 let mainWrapper = document.createElement('div');
 mainWrapper.className = 'main-wrapper';
@@ -25,3 +28,9 @@ mainWrapper.prepend(title);
 mainWrapper.append(textArea);
 
 keyboard = document.getElementById('keyboard');
+
+// const arr = ['a', 'б'];
+
+// let brp = new Key(...arr);
+
+// console.log(brp);
