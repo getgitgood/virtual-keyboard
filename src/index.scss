@@ -1,1 +1,40 @@
 @import "./scss/base/normalize";
+@import "./scss/abstracts/variables";
+@import "./scss/components/keyboard";
+@import "./scss/components/keys";
+@import "./scss/base/fonts.scss";
+
+body {
+  min-height: 100vh;
+  background: $background;
+  background: $gradient-background;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+};
+
+.title {
+  font-family: $primary-font;
+  font-weight: bold;
+  color: $addition-color;
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.body__text-area {
+  font-size: 1.5rem;
+  outline-style: double;
+  outline-color: $addition-color;
+  margin: 0 auto;
+  display: block;
+  background: $primary-color;
+  border-radius: 5px;
+  padding: 0.3rem;
+}
+
+.hidden {
+  display: none;
+}

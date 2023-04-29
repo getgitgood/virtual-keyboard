@@ -31,15 +31,15 @@ export default class Keys {
       '/': 'Slash',
     };
 
-    this.div.className = `keyboard--key key Key${this.caseDown.toUpperCase()}`;
+    this.div.className = `keyboard__key key Key${this.caseDown.toUpperCase()}`;
     if (this.caseDown.length > 1) {
-      this.div.className = `keyboard--key key ${this.caseDown}`;
+      this.div.className = `keyboard__key key ${this.caseDown}`;
     }
     if (this.digit) {
-      this.div.className = `keyboard--key key Digit${this.caseDown}`;
+      this.div.className = `keyboard__key key Digit${this.caseDown}`;
     }
     if (Object.hasOwn(allias, this.elementsValues[0])) {
-      this.div.className = `keyboard--key key ${allias[this.elementsValues[0]]}`;
+      this.div.className = `keyboard__key key ${allias[this.elementsValues[0]]}`;
     }
     return this;
   }

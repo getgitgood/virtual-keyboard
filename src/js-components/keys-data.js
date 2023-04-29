@@ -44,6 +44,7 @@ const engRow2 = [['CapsLock', 'CapsLock', 'CapsLock', 'CapsLock'],
   ['k', 'K', 'K', 'k'],
   ['l', 'L', 'L', 'l'],
   [';', ':', ';', ':'],
+  ['\'', '"', '\'', '"'],
   ['Enter', 'Enter', 'Enter', 'Enter'],
 ];
 
@@ -58,19 +59,21 @@ const engRow3 = [['Shift', 'Shift', 'Shift', 'Shift'],
   [',', '<', ',', '<'],
   ['.', '>', '.', '>'],
   ['/', '?', '/', '?'],
-  ['ShiftLeft', 'ShiftLeft', 'ShiftLeft', 'ShiftLeft'],
-  ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
+  ['▼', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
+  ['LShift', 'LShift', 'LShift', 'LShift'],
 ];
 
-const engRow4 = [['Control', 'Control', 'Control', 'Control'],
+const engRow4 = [['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
   ['Win', 'Win', 'Win', 'Win'],
   ['Alt', 'Alt', 'Alt', 'Alt'],
   ['Spacebar', 'Spacebar', 'Spacebar', 'Spacebar'],
   ['Alt', 'Alt', 'Alt', 'Alt'],
   ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
-  ['ArrowLeft', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
-  ['ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
-  ['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']];
+  ['^', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
+  ['▼', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
+  ['>', 'ArrowRight', 'ArrowRight', 'ArrowRight'],
+  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
+];
 
 const rusRow0 = [
   ['Ё', 'ё', 'Ё', 'ё'],
@@ -133,12 +136,12 @@ const rusRow3 = [
   ['б', 'Б', 'Б', 'б'],
   ['ю', 'Ю', 'Ю', 'ю'],
   ['.', ',', '.', ','],
-  ['ShiftLeft', 'ShiftLeft', 'ShiftLeft', 'ShiftLeft'],
   ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
+  ['LShift', 'LShift', 'LShift', 'LShift'],
 ];
 
 const rusRow4 = [
-  ['Control', 'Control', 'Control', 'Control'],
+  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
   ['Win', 'Win', 'Win', 'Win'],
   ['Alt', 'Alt', 'Alt', 'Alt'],
   ['Spacebar', 'Spacebar', 'Spacebar', 'Spacebar'],
@@ -147,6 +150,7 @@ const rusRow4 = [
   ['ArrowLeft', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
   ['ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
   ['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight'],
+  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
 ];
 
 export {
