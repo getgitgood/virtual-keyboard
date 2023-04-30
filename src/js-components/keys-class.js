@@ -33,7 +33,11 @@ export default class Keys {
 
     this.div.className = `keyboard__key key Key${this.caseDown.toUpperCase()}`;
     if (this.caseDown.length > 1) {
-      this.div.className = `keyboard__key key ${this.caseDown}`;
+      if (this.caseDown.toLowerCase() !== 'space') {
+        this.div.className = `keyboard__key key ${this.caseDown} spec-char`;
+      } else {
+        this.div.className = `keyboard__key key ${this.caseDown}`;
+      }
     }
     if (this.digit) {
       this.div.className = `keyboard__key key Digit${this.caseDown}`;
@@ -55,17 +59,36 @@ export default class Keys {
   }
 
   assignElements() {
+    const arrowsSymbols = {
+      ArrowLeft: '🢀',
+      ArrowRight: '🢂',
+      ArrowUp: '🢁',
+      ArrowDown: '🢃',
+      MetaLeft: 'Win',
+      ShiftLeft: 'Shift',
+      ShiftRight: 'Shift',
+      AltLeft: 'Alt',
+      AltRight: 'Alt',
+      ControlRight: 'Ctrl',
+      ControlLeft: 'Ctrl',
+      Delete: 'Del',
+    };
+
     for (let i = 0; i < this.elementsClasses.length; i += 1) {
       const span = document.createElement('span');
       span.className = this.elementsClasses[i];
       span.textContent = this.elementsValues[i];
+      if (Object.keys(arrowsSymbols).some((item) => item === span.textContent)) {
+        span.textContent = arrowsSymbols[this.elementsValues[i]];
+        this.div.classList.add('spec-char');
+      }
       if (this.elementsClasses[i] !== 'caseDown') {
         span.classList.add('hidden');
       }
       try {
         this.assignedContainer.appendChild(span);
       } catch (e) {
-        throw new Error('container not assign!');
+        throw new Error('Container not assign!');
       }
     }
     return this;

@@ -6,6 +6,8 @@ import {
   rusRow0, rusRow1, rusRow2, rusRow3, rusRow4,
 } from './js-components/keys-data';
 
+import { catchPress, findVisible, removeClassFrom } from './js-components/keyboard';
+
 // data sets
 
 const keysDataEng = [
@@ -65,4 +67,23 @@ function fillRows(lang1, lang2, ...arr) {
     }
   }
 }
+
 fillRows('eng', 'rus hidden', keysDataEng, keysDataRus);
+
+window.addEventListener('keydown', (event) => {
+  event.preventDefault();
+  const textarea = document.querySelector('.text-area');
+  const listenKey = catchPress(event, document);
+  const currentValue = findVisible(listenKey);
+  if (currentValue && !currentValue.classList.contains('active')) {
+    listenKey.classList.add('active');
+    if (currentValue.textContent.length === 1) {
+      textarea.value += currentValue.textContent;
+    }
+  }
+});
+
+window.addEventListener('keyup', (event) => {
+  const listenKey = catchPress(event, document);
+  removeClassFrom(listenKey, 'active');
+});

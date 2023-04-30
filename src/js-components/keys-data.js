@@ -30,7 +30,7 @@ const engRow1 = [['Tab', 'Tab', 'Tab', 'Tab'],
   ['[', '{', '[', '{'],
   [']', '}', ']', '}'],
   ['\\', '|', '\\', '|'],
-  ['Del', 'Del', 'Del', 'Del'],
+  ['Delete', 'Delete', 'Delete', 'Delete'],
 ];
 
 const engRow2 = [['CapsLock', 'CapsLock', 'CapsLock', 'CapsLock'],
@@ -48,7 +48,7 @@ const engRow2 = [['CapsLock', 'CapsLock', 'CapsLock', 'CapsLock'],
   ['Enter', 'Enter', 'Enter', 'Enter'],
 ];
 
-const engRow3 = [['Shift', 'Shift', 'Shift', 'Shift'],
+const engRow3 = [['ShiftLeft', 'ShiftLeft', 'ShiftLeft', 'ShiftLeft'],
   ['z', 'Z', 'Z', 'z'],
   ['x', 'X', 'X', 'x'],
   ['c', 'C', 'C', 'c'],
@@ -59,20 +59,19 @@ const engRow3 = [['Shift', 'Shift', 'Shift', 'Shift'],
   [',', '<', ',', '<'],
   ['.', '>', '.', '>'],
   ['/', '?', '/', '?'],
-  ['▼', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
-  ['LShift', 'LShift', 'LShift', 'LShift'],
+  ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
+  ['ShiftRight', 'ShiftRight', 'ShiftRight', 'ShiftRight'],
 ];
 
-const engRow4 = [['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
-  ['Win', 'Win', 'Win', 'Win'],
-  ['Alt', 'Alt', 'Alt', 'Alt'],
-  ['Spacebar', 'Spacebar', 'Spacebar', 'Spacebar'],
-  ['Alt', 'Alt', 'Alt', 'Alt'],
-  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
-  ['^', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
-  ['▼', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
-  ['>', 'ArrowRight', 'ArrowRight', 'ArrowRight'],
-  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
+const engRow4 = [['ControlLeft', 'ControlLeft', 'ControlLeft', 'ControlLeft'],
+  ['MetaLeft', 'MetaLeft', 'MetaLeft', 'MetaLeft'],
+  ['AltLeft', 'AltLeft', 'AltLeft', 'AltLeft'],
+  ['Space', 'Space', 'Space', 'Space'],
+  ['AltRight', 'AltRight', 'AltRight', 'AltRight'],
+  ['ArrowLeft', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
+  ['ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
+  ['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight'],
+  ['ControlRight', 'ControlRight', 'ControlRight', 'ControlRight'],
 ];
 
 const rusRow0 = [
@@ -107,7 +106,7 @@ const rusRow1 = [
   ['Х', 'х', 'Х', 'х'],
   ['Ъ', 'ъ', 'Ъ', 'ъ'],
   ['\\', '/', '\\', '/'],
-  ['Del', 'Del', 'Del', 'Del'],
+  ['Delete', 'Delete', 'Delete', 'Delete'],
 ];
 const rusRow2 = [
   ['CapsLock', 'CapsLock', 'CapsLock', 'CapsLock'],
@@ -125,7 +124,7 @@ const rusRow2 = [
   ['Enter', 'Enter', 'Enter', 'Enter'],
 ];
 const rusRow3 = [
-  ['Shift', 'Shift', 'Shift', 'Shift'],
+  ['ShiftLeft', 'ShiftLeft', 'ShiftLeft', 'ShiftLeft'],
   ['я', 'Я', 'Я', 'я'],
   ['ч', 'Ч', 'Ч', 'ч'],
   ['с', 'С', 'С', 'с'],
@@ -137,20 +136,19 @@ const rusRow3 = [
   ['ю', 'Ю', 'Ю', 'ю'],
   ['.', ',', '.', ','],
   ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowUp'],
-  ['LShift', 'LShift', 'LShift', 'LShift'],
+  ['ShiftRight', 'ShiftRight', 'ShiftRight', 'ShiftRight'],
 ];
 
 const rusRow4 = [
-  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
-  ['Win', 'Win', 'Win', 'Win'],
-  ['Alt', 'Alt', 'Alt', 'Alt'],
-  ['Spacebar', 'Spacebar', 'Spacebar', 'Spacebar'],
-  ['Alt', 'Alt', 'Alt', 'Alt'],
-  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
+  ['ControlLeft', 'ControlLeft', 'ControlLeft', 'ControlLeft'],
+  ['MetaLeft', 'MetaLeft', 'MetaLeft', 'MetaLeft'],
+  ['AltLeft', 'AltLeft', 'AltLeft', 'AltLeft'],
+  ['Space', 'Space', 'Space', 'Space'],
+  ['AltRight', 'AltRight', 'AltRight', 'AltRight'],
   ['ArrowLeft', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft'],
   ['ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowDown'],
   ['ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight'],
-  ['Ctrl', 'Ctrl', 'Ctrl', 'Ctrl'],
+  ['ControlRight', 'ControlRight', 'ControlRight', 'ControlRight'],
 ];
 
 export {

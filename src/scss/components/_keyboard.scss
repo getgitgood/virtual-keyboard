@@ -4,6 +4,7 @@
   max-width: 40%;
   margin: 5rem auto;
   padding: 1rem;
+  min-width: 800px;
   background: $primary-color;
   border-color: $secondary-color;
   border-radius: 10px;
@@ -17,17 +18,17 @@
 }
 
 .keyboard__row:nth-child(2) {
-  grid-template-columns: 1.3fr repeat(13, 1.1fr) 1.5fr;
+  grid-template-columns: 1.7fr repeat(13, 1.1fr) 1.5fr;
 }
 
 .keyboard__row:nth-child(3) {
-  grid-template-columns: 1fr repeat(11, 0.7fr) 1.6fr;
+  grid-template-columns: 0.5fr repeat(11, 1fr) 2fr;
 }
 
 .keyboard__row:nth-child(4) {
-  grid-template-columns: 1.7fr repeat(10, 1fr) 0.9fr 1.8fr;
+  grid-template-columns: 2.5fr repeat(10, 1.1fr) 1fr 2.5fr;
 }
 
 .keyboard__row:nth-child(5) {
-  grid-template-columns: repeat(3, 1fr) 7fr repeat(2, 1fr) repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1.1fr) 7fr repeat(4, 1fr) 1.25fr;
 }

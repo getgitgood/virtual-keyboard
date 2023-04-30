@@ -19,6 +19,18 @@
   -khtml-user-select: none; 
   -webkit-user-select: none; 
   -webkit-touch-callout: none; 
+  
+  &.active {
+
+    transform: translateY(3%);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5), 
+                inset 0px -1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    color: $primary-color;
+    background: $secondary-color;
+    box-shadow: 0px 2px 4px 1px $secondary-color;
+
+  }
 
   & > *:not(.hidden) {
 
@@ -68,15 +80,17 @@
   }
 }
 
-.keyboard__row:nth-child(5) > .key:nth-child(3n + 2),
-.keyboard__row:nth-child(5) > .key:nth-child(3n + 3),
-.keyboard__row:nth-child(5) > .key:nth-child(6n + 1),
-.keyboard__row:nth-child(4) > .key:nth-last-child(2) {
+.spec-char {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   padding-left: 0;
   color: $primary-color;
   background: $addition-color;
 
+  &.active {
+
+    color: $addition-color;
+
+  }
   &:hover {
 
     color: $addition-color;
@@ -87,19 +101,4 @@
 
 .keyboard__row:nth-child(5) > .key:nth-child(4) {
   color: $primary-color;
-}
-
-.key:last-child,
-.key:first-child {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  padding-left: 0;
-  color: $primary-color;
-  background: $addition-color;
-
-  &:hover {
-
-    color: $addition-color;
-    background: $secondary-color;
-
-  }
 }
