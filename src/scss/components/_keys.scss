@@ -58,6 +58,12 @@
   }
 }
 
+.caseDown,
+.caseUp,
+.caps,
+.shiftCaps {
+  pointer-events: none;
+}
 .keyboard__row:nth-child(1) > .key:nth-child(1) {
   color: $font-color;
   background: $primary-color;

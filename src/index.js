@@ -10,6 +10,7 @@ import {
   catchPress, findVisible, removeClassFrom, toLowerCase,
   toUpperCase, removeCharacter, switchLanguage, addSpace,
   addTabulation, addClassTo, addValue, enableCaps, toCapsCase,
+  toCapsCaseMouseDown, toCapsCaseMouseUp,
 } from './js-components/keyboard';
 
 // data sets
@@ -36,6 +37,7 @@ const body = document.querySelector('body');
 const centralWrapper = createElement('div', 'main-wrapper');
 const title = createElement('p', 'title', 'RSS Virtual Keyboard');
 const textArea = createElement('textarea', 'body__text-area text-area');
+const hint = createElement('p', 'title hint', 'Made at Windows. To switch language - Shift + Alt');
 textArea.cols = 120;
 textArea.rows = 15;
 
@@ -45,14 +47,16 @@ keyboard.id = 'keyboard';
 centralWrapper.appendChild(title);
 centralWrapper.appendChild(textArea);
 centralWrapper.appendChild(keyboard);
+centralWrapper.appendChild(hint);
 body.appendChild(centralWrapper);
 
 buildRows();
 
 // fill keyboard rows with values
 
+const rows = document.querySelectorAll('.keyboard__row');
+
 function fillRows(lang1, lang2, ...arr) {
-  const rows = document.querySelectorAll('.keyboard__row');
   for (let i = 0; i < rows.length; i += 1) {
     const engArray = arr[0][i];
     const rusArray = arr[1][i];
@@ -75,14 +79,13 @@ function fillRows(lang1, lang2, ...arr) {
 fillRows('eng', 'rus hidden', keysDataEng, keysDataRus);
 
 // listen keydown and keyup events
+const textarea = document.querySelector('.text-area');
 
 window.addEventListener('keydown', (event) => {
   event.preventDefault();
-  const textarea = document.querySelector('.text-area');
   const listenKey = catchPress(event);
   const currentValue = findVisible(listenKey);
   if (currentValue) {
-    textArea.focus();
     switchLanguage(event);
     toUpperCase(event);
     enableCaps(event);
@@ -100,4 +103,32 @@ window.addEventListener('keyup', (event) => {
   toLowerCase(event);
   toCapsCase(event);
   removeClassFrom(listenKey, 'active');
+});
+
+rows.forEach((item) => item.addEventListener('click', (event) => {
+  const currentValue = findVisible(event.target);
+  addValue(currentValue, textarea);
+  addSpace(currentValue, textarea);
+  addTabulation(currentValue, textArea);
+  removeCharacter(currentValue, textArea);
+  toCapsCase(event);
+}));
+
+const tab = document.querySelector('.CapsLock');
+tab.addEventListener('mousedown', (event) => {
+  toCapsCaseMouseDown(event, 'caps');
+});
+
+tab.addEventListener('mouseup', (event) => {
+  toCapsCaseMouseUp(event, 'caseDown');
+});
+
+const shift = document.querySelector('.ShiftLeft');
+
+shift.addEventListener('mousedown', (event) => {
+  toCapsCaseMouseDown(event, 'caseUp');
+});
+
+shift.addEventListener('mouseup', (event) => {
+  toCapsCaseMouseUp(event, 'caseDown');
 });

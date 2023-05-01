@@ -139,6 +139,34 @@ export function toCapsCase(event) {
   }
 }
 
+export function toCapsCaseMouseDown(event, selector) {
+  const currentLanguage = event.target.className;
+  const letterCases = document.querySelectorAll(`.${currentLanguage} > span`);
+  if (currentLanguage) {
+    letterCases.forEach((item) => {
+      if (item.classList.contains(selector)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+}
+
+export function toCapsCaseMouseUp(event, selector) {
+  const currentLanguage = event.target.className;
+  const letterCases = document.querySelectorAll(`.${currentLanguage} > span`);
+  if (currentLanguage) {
+    letterCases.forEach((item) => {
+      if (item.classList.contains(selector)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+}
+
 function isBackspacePressed(event) {
   const eventCode = event.code;
   if (eventCode === 'Backspace' || eventCode === 'Delete') {
@@ -149,7 +177,7 @@ function isBackspacePressed(event) {
 
 export function removeCharacter(event, element) {
   const el = element;
-  if (isBackspacePressed(event)) {
+  if (isBackspacePressed(event) || event.textContent === 'Backspace' || event.textContent === 'Del') {
     el.value = element.value.slice(0, -1);
   }
 }
@@ -175,7 +203,7 @@ export function switchLanguage(event) {
 
 function isSpaceFired(event) {
   const evt = event;
-  if (evt.code === 'Space') {
+  if (evt.code === 'Space' || event.textContent === 'Space') {
     return true;
   }
   return false;
@@ -198,7 +226,7 @@ function isTabFired(event) {
 
 export function addTabulation(event, element) {
   const el = element;
-  if (isTabFired(event)) {
+  if (isTabFired(event) || event.textContent === 'Tab') {
     el.value += '    ';
   }
 }
