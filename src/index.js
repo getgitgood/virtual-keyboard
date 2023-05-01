@@ -6,7 +6,11 @@ import {
   rusRow0, rusRow1, rusRow2, rusRow3, rusRow4,
 } from './js-components/keys-data';
 
-import { catchPress, findVisible, removeClassFrom } from './js-components/keyboard';
+import {
+  catchPress, findVisible, removeClassFrom, toLowerCase,
+  toUpperCase, removeCharacter, switchLanguage, addSpace,
+  addTabulation, addClassTo, addValue, enableCaps, toCapsCase,
+} from './js-components/keyboard';
 
 // data sets
 
@@ -70,20 +74,30 @@ function fillRows(lang1, lang2, ...arr) {
 
 fillRows('eng', 'rus hidden', keysDataEng, keysDataRus);
 
+// listen keydown and keyup events
+
 window.addEventListener('keydown', (event) => {
   event.preventDefault();
   const textarea = document.querySelector('.text-area');
-  const listenKey = catchPress(event, document);
+  const listenKey = catchPress(event);
   const currentValue = findVisible(listenKey);
-  if (currentValue && !currentValue.classList.contains('active')) {
-    listenKey.classList.add('active');
-    if (currentValue.textContent.length === 1) {
-      textarea.value += currentValue.textContent;
-    }
+  if (currentValue) {
+    textArea.focus();
+    switchLanguage(event);
+    toUpperCase(event);
+    enableCaps(event);
+    toCapsCase(event);
+    addClassTo(listenKey, 'active');
+    addValue(currentValue, textarea);
+    addSpace(event, textArea);
+    addTabulation(event, textArea);
+    removeCharacter(event, textArea);
   }
 });
 
 window.addEventListener('keyup', (event) => {
   const listenKey = catchPress(event, document);
+  toLowerCase(event);
+  toCapsCase(event);
   removeClassFrom(listenKey, 'active');
 });
