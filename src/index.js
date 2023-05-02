@@ -10,7 +10,7 @@ import {
   catchPress, findVisible, removeClassFrom, toLowerCase,
   toUpperCase, removeCharacter, switchLanguage, addSpace,
   addTabulation, addClassTo, addValue, enableCaps, toCapsCase,
-  toCapsCaseMouseDown, toCapsCaseMouseUp, addNewLine,
+  toCapsCaseMouseDown, toCapsCaseMouseUp, addNewLine, checkStorage,
 } from './js-components/keyboard';
 
 // data sets
@@ -76,7 +76,11 @@ function fillRows(lang1, lang2, ...arr) {
   }
 }
 
-fillRows('eng', 'rus hidden', keysDataEng, keysDataRus);
+fillRows('rus hidden', 'eng', keysDataEng, keysDataRus);
+
+// check localStorage
+
+checkStorage();
 
 // listen keydown and keyup events
 const textarea = document.querySelector('.text-area');

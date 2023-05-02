@@ -46,7 +46,7 @@ export function addClassTo(node, arg) {
     node.classList.add(arg);
   }
 }
-function checkLanguage(event) {
+export function checkLanguage(event) {
   if (!catchPress(event)) {
     return null;
   }
@@ -54,11 +54,11 @@ function checkLanguage(event) {
   let currentLanguage;
   childNodes.forEach((item) => {
     if (!item.classList.contains('hidden')) {
-      currentLanguage = item;
+      currentLanguage = item.className;
     }
   });
-
-  return currentLanguage.className;
+  localStorage.language = currentLanguage;
+  return currentLanguage;
 }
 
 function isShiftFired(event) {
@@ -248,5 +248,19 @@ export function addTabulation(event, element) {
 export function enableCaps(event) {
   if (isCapsFired(event)) {
     toUpperCase(event);
+  }
+}
+
+export function checkStorage() {
+  const eng = document.querySelectorAll('.eng');
+  const rus = document.querySelectorAll('.rus');
+
+  if (localStorage.language === 'rus') {
+    eng.forEach((item) => {
+      item.classList.add('hidden');
+    });
+    rus.forEach((item) => {
+      item.classList.remove('hidden');
+    });
   }
 }

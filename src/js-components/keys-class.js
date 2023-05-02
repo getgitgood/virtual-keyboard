@@ -30,7 +30,6 @@ export default class Keys {
       '.': 'Period',
       '/': 'Slash',
     };
-
     this.div.className = `keyboard__key key Key${this.caseDown.toUpperCase()}`;
     if (this.caseDown.length > 1) {
       if (this.caseDown.toLowerCase() !== 'space') {
