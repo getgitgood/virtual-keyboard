@@ -10,7 +10,7 @@ import {
   catchPress, findVisible, removeClassFrom, toLowerCase,
   toUpperCase, removeCharacter, switchLanguage, addSpace,
   addTabulation, addClassTo, addValue, enableCaps, toCapsCase,
-  toCapsCaseMouseDown, toCapsCaseMouseUp,
+  toCapsCaseMouseDown, toCapsCaseMouseUp, addNewLine,
 } from './js-components/keyboard';
 
 // data sets
@@ -37,7 +37,7 @@ const body = document.querySelector('body');
 const centralWrapper = createElement('div', 'main-wrapper');
 const title = createElement('p', 'title', 'RSS Virtual Keyboard');
 const textArea = createElement('textarea', 'body__text-area text-area');
-const hint = createElement('p', 'title hint', 'Made at Windows. To switch language - Shift + Alt');
+const hint = createElement('p', 'title hint', 'Created in Windows. To switch language - Shift + Alt');
 textArea.cols = 120;
 textArea.rows = 15;
 
@@ -90,6 +90,7 @@ window.addEventListener('keydown', (event) => {
     toUpperCase(event);
     enableCaps(event);
     toCapsCase(event);
+    addNewLine(event, textarea);
     addClassTo(listenKey, 'active');
     addValue(currentValue, textarea);
     addSpace(event, textArea);
@@ -107,6 +108,7 @@ window.addEventListener('keyup', (event) => {
 
 rows.forEach((item) => item.addEventListener('click', (event) => {
   const currentValue = findVisible(event.target);
+  addNewLine(currentValue, textArea);
   addValue(currentValue, textarea);
   addSpace(currentValue, textarea);
   addTabulation(currentValue, textArea);

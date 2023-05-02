@@ -190,6 +190,20 @@ function isAltFired(event) {
   return false;
 }
 
+function isEnterFired(event) {
+  const evt = event;
+  if (evt.code === 'Enter' || evt.textContent === 'Enter') {
+    return true;
+  }
+  return false;
+}
+
+export function addNewLine(event, element) {
+  const el = element;
+  if (isEnterFired(event)) {
+    el.value += '\r\n';
+  }
+}
 export function switchLanguage(event) {
   const currentLanguage = checkLanguage(event);
   const switchTo = currentLanguage === 'eng' ? 'rus' : 'eng';
